@@ -1,0 +1,27 @@
+<p>inbuilt works!</p>
+<h1>Inbuilt Pipes</h1>
+
+salary: {{salary}}
+<br>
+salary: {{salary | currency:'INR'}}
+<br>
+salary: {{salary | currency:'JPY'}}
+<br>
+salary: {{salary | currency:'EUR'}}
+<br>
+friend: {{friend}}
+<br>
+friend: {{friend | uppercase}}
+<br>
+friend: {{friend | lowercase}}
+<br>
+Date: {{currentDate}}
+<br>
+Date: {{currentDate | date:'short'}}
+<br>
+Date: {{currentDate | date:'shortTime'}}
+<br>
+Date: {{currentDate | date:'s:SS'}}
+<hr>
+Name: {{name}}
+<button (click)="changename()">Change</button>

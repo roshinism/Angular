@@ -1,0 +1,14 @@
+<p>todo works!</p>
+
+<h3>TODO MANAGER</h3>
+Please add the name:
+<input type="text" [(ngModel)]="todo">{{todo}}
+<!--the ngmodel assigns the values to todo variable in realtime-->
+<button (click)="addnames()">Add</button>
+<br>
+<ul>Added names list
+    <li *ngFor="let t of tasks; let current = index">
+        {{t}}
+        <button (click)="deleteTask(current)">X</button>
+</li>
+</ul>
