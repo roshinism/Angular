@@ -1,0 +1,20 @@
+<p>assignment works!</p>
+<h4 contenteditable>Video</h4>
+<form #youtube="ngForm" (ngSubmit)="submitForm(youtube)">
+    Url: <input type="url" [(ngModel)]="link" name="link">{{link}}
+    <br><br>
+    Date : <input type="date" [(ngModel)]="date" name="date" >{{score}}
+    <br><br>
+    Country:
+    <select [(ngModel)]="country" name="mycountry">
+        <option value="India">india</option>
+        <option value="New Zealand">NewZealand</option>
+        <option value="England">England</option>
+        <option value="Australia">Australia</option>
+    </select>{{country}}<br><br>
+    Rate : <input type="range" min="0" max="10" value="0">
+    <br><br>
+    <button type="submit" [disabled]="youtube.invalid">submit</button>
+<br><br>
+<iframe [src]= 'sanitizer.bypassSecurityTrustResourceUrl(link)'></iframe>
+</form>

@@ -1,0 +1,45 @@
+<p>remote-employee works!</p>
+<div>
+    Selected Employee 
+    <br>
+    Name: {{selectedEmployee}}
+</div>
+<br><br>
+<div>
+    <form #employeeForm="ngForm">
+        Id:{{myid}}<br>
+    Name: <input type="text" name="name" [(ngModel)]="myname">
+    <br>
+    Age: <input type="number" name="age" [(ngModel)]="myage">
+    <br>
+    Salary: <input type="number" name="salary" [(ngModel)]="mysalary">
+<br>
+            <button (click)= "addEmployee(employeeForm)">Add Employee</button>
+            <button (click)= "updateEmployeeNow()">Update Employee</button>
+    </form>
+    
+</div>
+<br><br>
+<div>
+    <table border="1" align=center>
+        <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Salary</th>
+                <th>Action</th>
+            </tr>
+            <tr *ngFor="let a of allEmployees | sortString; let counter = index">
+                <td>{{a.id}}</td>
+                <td>{{a.employee_name | uppercase}}</td>
+                <td>{{a.employee_age}}</td>
+                <td>{{a.employee_salary | check}}</td>
+                <td>
+                    <button (click)="viewEmployee(counter)">View</button>
+                    <button (click)="deleteEmployee(counter)">Delete</button>
+                    <button (click)="updateEmployee(counter)">Update</button>
+                    <button (click)="viewInSPA(counter)">View in SPA</button
+                ></td>
+                </tr>
+</table>
+</div>

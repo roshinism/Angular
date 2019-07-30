@@ -1,0 +1,44 @@
+<p>friends works!</p>
+
+<div>
+        The friend is {{selectedFriend}}
+    </div>
+    <br><br>
+
+    <div>
+            <form #friendForm="ngForm">
+                Id:{{myid}}<br>
+            Name: <input type="text" name="name" [(ngModel)]="myname">
+            <br>
+            Location: <input type="text" name="location" [(ngModel)]="mylocation">
+            <br>
+            Type: <input type="text" name="type" [(ngModel)]="mytype">
+        <br>
+                    <button (click)= "addFriend(friendForm)">Add</button>
+                   <button (click)= "updateFriendNow()">Update</button>
+            </form>
+            
+        </div>
+        <br><br>
+
+
+<div>
+        <table border="1" align=center>
+            <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Type</th>
+                    <th>Action</th>
+                </tr>
+                <tr *ngFor="let a of allFriends; let counter = index">
+                    <td>{{a.id}}</td>
+                    <td>{{a.name }}</td>
+                    <td>{{a.location}}</td>
+                    <td>{{a.type}}</td>
+                    <td><button (click)="viewFriend(counter)">View</button></td>
+                    <td><button (click)="deleteFriend(counter)">Delete</button></td>
+                    <td><button (click)="updateFriend(counter)">Update</button></td>
+                </tr>
+                </table>
+                </div>

@@ -1,0 +1,21 @@
+<p>remote works!</p>
+Filter by Name: <input type="text" [(ngModel)]='searchtext'> {{searchtext}}
+<br><br>
+
+
+<table border="2" align="center">
+        <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Zipcode</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+            </tr>
+            <tr *ngFor="let i of remoteUsers | searchpipe:searchtext">
+                <td>{{i.id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.address.zipcode}}</td>
+                <td>{{i.address.geo.lat}}</td>
+                <td>{{i.address.geo.lng}}</td>
+                </tr>
+</table>

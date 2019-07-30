@@ -1,0 +1,121 @@
+<p>ngfor-component works!</p>
+Score:{{score}}
+<br>
+Scores:{{scores[0] +5}}, {{scores [1]+5}}
+<br>
+Using ngFor (use it for Element which is iterating);
+
+<ul>
+    <li *ngFor="let s of friendsScores; let counter=index">{{s}} at {{counter}}</li>
+</ul>
+
+
+<ol>
+    <li *ngFor="let f of friends">{{f}}</li>
+</ol>
+
+
+<ul>
+        <li *ngFor="let f of friends  | sortString; let counter= index">
+            <span (click)="friendClicked(counter)">{{f}}</span></li>
+    </ul>
+
+
+Friend Scores (Array of JSON objects):
+<ol>
+    <li *ngFor= "let fs of friendScores">{{fs.name}} {{fs.score}}</li>
+    <li *ngFor= "let fs of friendScores">{{fs.name}} scored {{fs.score}}</li>
+</ol>
+
+
+
+<table border="1">
+    <tr>
+        <th>S.no</th>
+        <th>Names</th>
+        <th>Scores</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor= "let fs of friendScores; let counter = index">
+        <td>{{counter+1}}</td>
+        <td>{{fs.name}}</td>
+        <td>{{fs.score}}</td>
+        <td><button (click)="display(counter)">Click</button></td>
+    </tr>
+</table>
+
+
+<hr>
+
+ngIf Directive:
+<br><br>
+Name:
+<span *ngIf="display1">
+    {{name}}
+</span>
+
+ngIf Directive again with else:
+<br><br>
+Name:
+<span *ngIf="display1; else nodisplay1">
+    {{name}}
+</span>
+<ng-template #nodisplay1>No name1!!</ng-template>
+<ng-template #nodisplay2>No name2!!</ng-template>
+<br><br>
+
+Multiple else If:
+<span *ngIf="score===10; else temp1">
+        {{score}}
+    </span>
+    <ng-template #temp1>
+            <span *ngIf="score===20; else temp2">
+                    {{score}}
+                </span>
+    </ng-template>
+                <ng-template #temp2>
+                        <span *ngIf="score===30; else temp3">
+                                {{score}}
+                            </span>
+                </ng-template>
+                            <ng-template #temp3>
+                                <span>{{score}} is invalid</span>
+                            </ng-template>
+
+                            <hr>
+
+ngSwitch Example:
+<br>
+Name:
+<div [ngSwitch]="name">
+    <span *ngSwitchCase="'Roshini'">
+        <h2>my name is Roshini</h2>
+    </span>
+    <span *ngSwitchCase="'India'">
+            <h2>Our Country</h2>
+        </span>
+        <span *ngSwitchCase="'Chennai'">
+                <h2>Namma Chennai</h2>
+            </span>
+            <span *ngSwitchDefault>
+                    <h2>invalid</h2>
+                </span>
+</div>
+
+Indscore:
+<div [ngSwitch]="indscore">
+    <span *ngSwitchCase='10'>
+        <h1>Ten</h1>
+    </span>
+    <span *ngSwitchCase='20'>
+            <h1>Twenty</h1>
+        </span>
+        <span *ngSwitchCase='30'>
+                <h1>Thirty</h1>
+            </span>
+            <span *ngSwitchDefault>
+                    <h1>invalid</h1>
+                </span>
+</div>
+
+<hr>

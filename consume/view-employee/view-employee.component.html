@@ -1,0 +1,17 @@
+<p>Details</p>
+
+<div *ngIf="employee; else comingsoon">
+    Name: {{employee.employee_name}}
+    <br>
+    Salary: {{employee.employee_salary}}
+    <br>
+    Age: {{employee.employee_age}}
+    <br><br>
+    Id: {{employee.id}}
+<br><br><br>
+</div>
+<button (click)="viewAll()">Back</button>
+
+<ng-template #comingsoon>
+    <h3>Loading employee data ...</h3>
+</ng-template>   

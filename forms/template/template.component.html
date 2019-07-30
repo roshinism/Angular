@@ -1,0 +1,23 @@
+<p>template works!</p>
+<h4 contenteditable>Template Driven Form</h4>
+<form #scoreForm="ngForm" (ngSubmit)="submitForm(scoreForm)">
+    Name: <input type="text" [(ngModel)]="fullname" name="myfullname" placeholder="Name" required>{{fullname}}
+    <br><br>
+    Score: <input type="number" [(ngModel)]="score" name="myscore" required>{{score}}
+    <br><br>
+    Country:
+    <select [(ngModel)]="country" name="mycountry">
+        <option value="India">india</option>
+        <option value="New Zealand">NewZealand</option>
+        <option value="England">England</option>
+        <option value="Australia">Australia</option>
+    </select>{{country}}
+    <br><br>
+    <button type="submit" [disabled]="scoreForm.invalid">submit</button>
+</form>
+
+<ol>
+    <li *ngFor="let u of users">
+        {{u.myfullname}} -- {{u.myscore}} -- {{u.mycountry}}
+    </li>
+</ol>

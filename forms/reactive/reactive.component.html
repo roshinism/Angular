@@ -1,0 +1,17 @@
+<p>reactive works!</p>
+<h4 contenteditable>Reactive Driven Form</h4>
+<form [formGroup]="scoreForm" (ngSubmit)="submitForm(scoreForm)">
+    Name: <input type="text" formControlName="fname" >{{fname}}
+    <br><br>
+    Score: <input type="number" formControlName="score">{{score}}
+    <br><br>
+    Country:
+    <select formControlName="country">
+        <option value="India">india</option>
+        <option value="New Zealand">NewZealand</option>
+        <option value="England">England</option>
+        <option value="Australia">Australia</option>
+    </select>{{country}}
+    <br><br>
+    <button type="submit" [disabled]="scoreForm.invalid">submit</button>
+</form>
