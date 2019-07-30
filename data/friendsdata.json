@@ -1,0 +1,34 @@
+{
+  "friendsdata": [
+    {
+      "id": 3,
+      "name": "Elena Gilbert",
+      "location": "Mystic Falls",
+      "type": "Human"
+    },
+    {
+      "id": 4,
+      "name": "Caroline Forbes",
+      "location": "New Orleans",
+      "type": "Vampire"
+    },
+    {
+      "id": 7,
+      "name": "Bonnie Bennett",
+      "location": "Virginia",
+      "type": "Witch"
+    },
+    {
+      "name": "Damon Salvatore",
+      "location": "Mystic Falls",
+      "type": "Human",
+      "id": 11
+    },
+    {
+      "name": "Stefan Salvatore",
+      "location": "Chennai",
+      "type": "Human",
+      "id": 12
+    }
+  ]
+}
